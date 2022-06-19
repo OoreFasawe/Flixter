@@ -44,6 +44,8 @@ Here's a walkthrough of implemented user stories:
 ![](https://i.imgur.com/kHuTDX1.gif)
 <img src='https://i.imgur.com/osRkBJV.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+https://drive.google.com/file/d/1Ete4CvB0SWIjphk0I5BAdJxflq79wjnA/view?usp=sharing
+
 GIF created with [Kap](https://ezgif.com/).
 
 ## Notes
