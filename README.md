@@ -50,6 +50,8 @@ GIF created with [Kap](https://ezgif.com/).
 
 Describe any challenges encountered while building the app.
 
+- Written instructions were hard to follow. Video walkthroughs were a life-saver. 
+
 ## Credits
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
