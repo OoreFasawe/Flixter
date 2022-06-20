@@ -35,6 +35,8 @@
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
     [self.gridView insertSubview:self.refreshControl atIndex:0];
     
+    
+    
 }
 
 - (void)fetchMovies {

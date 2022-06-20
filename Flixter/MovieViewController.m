@@ -17,11 +17,6 @@
 @property (strong, nonatomic) NSArray *filteredData;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
-
-
-
-
-
 @end
 
 @implementation MovieViewController
@@ -33,6 +28,7 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     [self fetchMovies];
     
@@ -50,7 +46,7 @@
         [self fetchMovies];
     }];
     
-    [networkAlert addAction:tryAgainAction]; 
+    [networkAlert addAction:tryAgainAction];
     
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=dd212af52115fe9e7e8656d91cd531d8"];
     
@@ -128,6 +124,5 @@
     DetailsViewController *detailVC = [segue destinationViewController];
     detailVC.detailDict = dataToPass;
 }
-
 
 @end
