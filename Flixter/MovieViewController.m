@@ -9,9 +9,10 @@
 #import "MovieCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "DetailsViewController.h"
+#import "Movie.h"
 
 @interface MovieViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic, strong) NSArray *movies;
+@property (nonatomic, strong) NSMutableArray *movies;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) NSArray *filteredData;
@@ -25,6 +26,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.activityIndicator startAnimating];
+    
+    self.movies = [[NSMutableArray alloc] init];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -68,11 +71,23 @@
                [self.activityIndicator stopAnimating];
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                
+               NSArray *dictionaries = dataDictionary[@"results"];
+               for (NSDictionary *dictionary in dictionaries) {
+                   Movie *movie = [[Movie alloc]initWithDictionary:dictionary];
+                   
+
+                   [self.movies addObject:movie];
+//                   NSLog(@"%@", self.movies[0].title);
+
+               }
+               
+               
+               
                //print dictionary
-               //NSLog(@"%@", dataDictionary);
+//               NSLog(@"%@", dataDictionary);
 
                // TODO: Store the movies in a property to use elsewhere
-               self.movies = dataDictionary[@"results"];
+               //self.movies = dataDictionary[@"results"];
                self.filteredData = dataDictionary[@"results"];
                //NSLog(@"%@", self.movies);
                // TODO: Reload your table view data
@@ -92,17 +107,15 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
+    Movie *movie = self.movies[indexPath.row];
     
-    NSDictionary *movie = self.movies[indexPath.row];
-    cell.titleLabel.text = movie[@"title"];
-    cell.synopsisLabel.text = movie[@"overview"];
+//    NSLog(@"%@", movie);
+    cell.titleLabel.text = movie.title;
+    cell.synopsisLabel.text = movie.synopsis;
     
-    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
-    NSString *posterURLString = movie[@"poster_path"];
-    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
-    
-    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
+    NSURL *posterURL = movie.posterURL;
     cell.posterImage.image = nil;
     [cell.posterImage setImageWithURL:posterURL];
     

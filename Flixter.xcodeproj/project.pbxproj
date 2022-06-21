@@ -24,6 +24,7 @@
 		8944A141285D117B006D6D3E /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8944A140285D117B006D6D3E /* DetailsViewController.m */; };
 		899F8FC9285D46EF00098658 /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 899F8FC8285D46EF00098658 /* GridViewController.m */; };
 		899F8FCC285D48CC00098658 /* GridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 899F8FCB285D48CC00098658 /* GridCell.m */; };
+		899F8FD9286233D800098658 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 899F8FD8286233D800098658 /* Movie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		899F8FC8285D46EF00098658 /* GridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridViewController.m; sourceTree = "<group>"; };
 		899F8FCA285D48CC00098658 /* GridCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridCell.h; sourceTree = "<group>"; };
 		899F8FCB285D48CC00098658 /* GridCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridCell.m; sourceTree = "<group>"; };
+		899F8FD7286233D800098658 /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		899F8FD8286233D800098658 /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		A3179D815E2BF090A9872C81 /* Pods-Flixter-FlixterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flixter-FlixterUITests.debug.xcconfig"; path = "Target Support Files/Pods-Flixter-FlixterUITests/Pods-Flixter-FlixterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF5D94B24A0E69B57D915CF0 /* Pods_Flixter_FlixterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flixter_FlixterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C2012CC90C44F8E1D5EB9F /* Pods_FlixterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlixterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +178,8 @@
 				8944A116285CD1BE006D6D3E /* main.m */,
 				8944A13F285D117B006D6D3E /* DetailsViewController.h */,
 				8944A140285D117B006D6D3E /* DetailsViewController.m */,
+				899F8FD7286233D800098658 /* Movie.h */,
+				899F8FD8286233D800098658 /* Movie.m */,
 			);
 			path = Flixter;
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 				899F8FCC285D48CC00098658 /* GridCell.m in Sources */,
 				899F8FC9285D46EF00098658 /* GridViewController.m in Sources */,
 				8944A141285D117B006D6D3E /* DetailsViewController.m in Sources */,
+				899F8FD9286233D800098658 /* Movie.m in Sources */,
 				8944A109285CD1BD006D6D3E /* SceneDelegate.m in Sources */,
 				8944A13B285CD365006D6D3E /* MovieViewController.m in Sources */,
 			);
